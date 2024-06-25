@@ -171,7 +171,6 @@ class UserTransaction:
 if __name__ == '__main__':
     
     transaction = UserTransaction()
-    while True:
         print("""
     ****************************
     *    Welcome to the Bank   *
@@ -186,6 +185,8 @@ if __name__ == '__main__':
     6. Change Password
     7. Check how much owe per month to a person whom u owe a loan
     """)
+    while True:
+
         usr_response = input('Enter your choice: ')
         if usr_response == '1':
             transaction.check_balance()
