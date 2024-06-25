@@ -30,6 +30,11 @@ class UserTransaction:
 
     def register_account(self):
         data = self.load_data()
+        connection = sqlite3.connect('data.db')
+        cursor = connection.cursor()
+        cursor.execute("DELETE FROM money")
+        connection.commit()
+        connection.close()
         balance = int(input("Enter your initial balance: "))
         password = input("Enter your password: ")
         password_checks = {1:False,2:False,3:False}
@@ -171,7 +176,7 @@ class UserTransaction:
 if __name__ == '__main__':
     
     transaction = UserTransaction()
-        print("""
+    print("""
     ****************************
     *    Welcome to the Bank   *
     ****************************
